@@ -3,7 +3,7 @@ function store_submits_to_file($name,$email){
  $fp = fopen(SUBMIT_FILE, "a+");
 
  if($fp){
-    $input = date("Y-m-d H:i:s").",".$_SERVER['SERVER_ADDR'].","."$name,$email".PHP_EOL;
+    $input = date("F j Y g:i a").",".$_SERVER['SERVER_ADDR'].","."$name,$email".PHP_EOL;
     if(fwrite($fp,$input)){
         fclose($fp);
         return true;
