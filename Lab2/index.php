@@ -1,5 +1,6 @@
 
 <?php
+var_dump($_SERVER);
 require_once("config.php");
 $user_name = isset($_POST["name"])?$_POST["name"]:"";
 $user_email = isset($_POST["email"])?$_POST["email"]:"";
