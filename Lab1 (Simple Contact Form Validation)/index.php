@@ -21,7 +21,6 @@ if(empty($user_name) || strlen($user_name)>= MAX_NAME_LENGTH){
 }
 ?>
 
-
 <html>
     <head>
         <title> contact form </title>
