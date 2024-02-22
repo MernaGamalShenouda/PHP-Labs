@@ -1,11 +1,17 @@
 
 <?php
-var_dump($_SERVER);
-require_once("config.php");
+require_once "vendor/autoload.php";
 $user_name = isset($_POST["name"])?$_POST["name"]:"";
 $user_email = isset($_POST["email"])?$_POST["email"]:"";
 $user_message = isset($_POST["message"])?$_POST["message"]:"";
 $submit_message = "";
+$desired_view = isset($_GET["view"]) ? $_GET["view"]: Default_VIEW;
+
+if($desired_view == "display"){
+    display_all_submits();
+    echo "<p>To add a new submit <a href='index.php'>click here</a></p>";
+    exit();
+}
 
 if(empty($user_name) || strlen($user_name)>= MAX_NAME_LENGTH){
   $submit_message = "**Name couldn't be empty and shouldn't exceed 100 characters";
@@ -14,14 +20,16 @@ if(empty($user_name) || strlen($user_name)>= MAX_NAME_LENGTH){
 } else if (empty($user_message) || strlen($user_message) >= MAX_MESSAGE_LENGTH){
     $submit_message = "**Message couldn't be empty and couldn't exceed 255 characters";
 }else{
+    store_submits_to_file($user_name, $user_email);
     exit("<p> <b> ".THANKS_MESSAGE." </b> </p>
     <p> <b> Name: </b> $user_name</p> 
     <p> <b> Email: </b> $user_email</p> 
     <p> <b> Message: </b> $user_message</p> 
+    <br>
+    <p>To visit all submits <a href='index.php?view=display'>click here</a></p>
     ");
 }
 ?>
-
 
 <html>
     <head>
