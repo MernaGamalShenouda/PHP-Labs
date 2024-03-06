@@ -1,5 +1,6 @@
 # .gitignore
 
+/Lab2/vendor
 /Lab3/vendor
 /Lab4/vendor
 /Lab4/resources/*
