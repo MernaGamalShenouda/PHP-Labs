@@ -26,7 +26,7 @@ $selectedItem = $capsule->table("items")->select()->where('id', $itemId)->first(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Glasses Shop</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
