@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Weather Forecast</title>
     </head>
     <body>
 
